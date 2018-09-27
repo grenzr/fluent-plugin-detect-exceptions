@@ -55,7 +55,8 @@ module Fluent
            :java),
       rule(:java, /^[\t ]+(?:eval )?at /, :java),
       rule(:java, /^[\t ]*(?:Caused by|Suppressed):/, :java),
-      rule(:java, /^[\t ]*... \d+\ more/, :java)
+      rule(:java, /^[\t ]*... \d+\ more/, :java),
+      rule(:java, /^[\t ]*--- End of inner exception stack trace ---/, :java)
     ].freeze
 
     PYTHON_RULES = [
